@@ -1,11 +1,8 @@
 package com.javanauta.usuario.infrastrucure.entity;
 
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Getter
 @Setter
@@ -13,6 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "telefone")
+@Builder
 
 public class Telefone {
 

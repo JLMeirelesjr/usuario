@@ -1,11 +1,9 @@
 package com.javanauta.usuario.infrastrucure.entity;
 
 
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.javanauta.usuario.business.dto.UsuarioDTO;
+import jakarta.persistence.*;
+import lombok.*;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,8 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "usuario")
+@Builder
 
-public class Usuario implements UserDetails {
+public class Usuario extends UsuarioDTO implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,5 +51,10 @@ public class Usuario implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return UserDetails.super.isAccountNonExpired();
     }
 }

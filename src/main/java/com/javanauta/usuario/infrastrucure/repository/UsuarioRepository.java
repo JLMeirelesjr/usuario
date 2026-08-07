@@ -2,6 +2,7 @@ package com.javanauta.usuario.infrastrucure.repository;
 
 
 import com.javanauta.usuario.infrastrucure.entity.Usuario;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
